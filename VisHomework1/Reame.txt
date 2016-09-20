@@ -1,5 +1,24 @@
 There are 4 realizations by Matlab and D3.
 
 Visualization1 and Visualization2 are in D3, running smoothly on local host.
+Just put .html files and database1.txt into the same folder and click the .html file.
+Vis1 is degined using color luminance from white to red
+Vis2 is degined using length difference from 0px to 30px(30pix=1FA). And this visualization you need to zoon out to see the whole pic, because length representing the FA Value make it really big.
 
 Visualization3 and Visualization4 are in D3, running smoothly on Matlab with version before 2014.
+Just adding .m files and database1.txt into matlab working space folder(the same folder)
+Vis3 is desined in 3D with interaction(if you have trouble with interation, please let me know), color changed with magnitude(from black to green) and height.
+Vis4 is Vis1 is degined using color luminance from black to red.
+
+
+My favorite image is the Vis1. But Vis3 is more functional to see all the values.
+
+Two best features of the tools
+1. Matlab can do numerical stuff really quick
+2. D3 is effecient rendering 2D image
+
+Worst feature of the tools,
+D3 reads all text contents as string, but actually they are all numbers.
+
+
+
