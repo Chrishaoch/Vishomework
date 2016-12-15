@@ -1,0 +1,4 @@
+Lineup data based on the first day of encountering TBI.
+
+Lightness is time/order
+Hue encouters

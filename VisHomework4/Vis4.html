@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Vishomework 4</title>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+
+</head>
+
+<body>
+<h1>Vishomework 4</h1>
+
+
+	<script> 
+		var catg=[],
+			width=window.innerWidth;
+			
+	    var svg=d3.select("body")
+            .append("svg:svg")
+			.attr("ID", 'canvas')
+            .attr("width",width)//x
+            .attr("height",410)//y
+			.style("background",'yellow');
+			
+		var colr=["#56ebd3", "#aa4c5c", "#ade64f", "#702cb4", "#dacff1", "#247672", "#9785d7", "#1c4585", "#36f459", "#df2a69", "#59a20c", "#fe74fe", "#e7d57e", "#51443f", "#f49446"];	
+		
+
+
+		svg.append("rect")
+			.attr("height",410)//d represents each data element
+			.attr("width", width)
+			.attr("x", 20)//i represents the index
+			.attr("y", 0)
+			.style({fill: 'gray'});
+
+		svg.append("rect")
+			.attr("height",410)//d represents each data element
+			.attr("width", 6)
+			.attr("x", width/2-3)//i represents the index
+			.attr("y", 0)
+			.style({fill: 'white'});
+
+			
+		d3.json('haoprocessed.json',function(haodata){
+			console.log(haodata[1][1][1]);
+			console.log(haodata[1][1]);//[6,159]
+			console.log(haodata[1]);// 5 array
+			console.log(haodata);// 15 encouters
+			
+		for (i = 0; i < 15; i++){
+			catg=haodata[i];
+			
+			svg.selectAll("circle")// I tried so many ways... this works, so wired...
+				.data(catg)
+				.enter()
+				.append("rect")
+				.attr("height",10)
+				.attr("width", 6)
+				.attr("x", function(data){console.log('this is data for x:' +i); return 500*data[1]/1500+width/2})
+				.attr("y", function(da){return da[0]*10})
+				.style({fill: colr[i]});	
+		}	
+		
+		var strs=["p1","p2", "p3","p4","p5","p6","p7", "p8","p9",
+					"p10","p11","p12", "p13","p14","p15","p16","p17", "p18","p19",
+					"p20","p21","p22", "p23","p24","p25","p26","p27", "p28","p29",
+					"p30","p31","p32", "p33","p34","p35","p36","p37", "p38","p39",
+					"p40","p41"]
+		var text = svg.append("text")
+				.attr("x",0)
+				.attr("y",-0.5)
+				.attr("font-size",10)
+				.attr("font-family","simsun")
+				.style("color","red");
+				
+		
+				text.selectAll("tspan")
+				.data(strs)
+				.enter()
+				.append("tspan")
+				.attr("x",text.attr("x"))
+				.attr("dy","1em")
+				.text(function(d){
+					return d;
+				});
+
+
+		});
+		
+	</script >
+	<p style="color:black ;padding:10px 5px 15px 20px">DIFFERENT COLOR IS THE REPRESENTATION OF SYMPTOMS : 
+	<span style="color:#56ebd3;"> Stress, </span>
+	<span style="color:#aa4c5c;"> PTSD, </span>
+	<span style="color:#ade64f;"> Speech, </span>
+	<span style="color:#702cb4;"> Anxiety, </span>
+	<span style="color:#dacff1;"> Depression, </span>
+	<span style="color:#247672;"> Headache, </span>
+	<span style="color:#9785d7;"> Sleep, </span>
+	<span style="color:#1c4585;"> Audiology, </span>
+	<span style="color:#36f459;"> Vision, </span>
+	<span style="color:#df2a69;"> Neurologic, </span>
+	<span style="color:#59a20c;"> Alzheimer, </span>
+	<span style="color:#fe74fe;"> Cognitive, </span>
+	<span style="color:#e7d57e;"> PCS, </span>
+	<span style="color:#51443f;"> Endocrine, </span>
+	<span style="color:#f49446;"> Skull_inj, </span>
+	</p>
+	
+</body>
+</html>
