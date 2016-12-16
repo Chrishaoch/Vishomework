@@ -1,4 +1,7 @@
-Lineup data based on the first day of encountering TBI.
+This is Vis Homework4
 
-Lightness is time/order
-Hue encouters
+In order to run this program, You can run Vis4.html on a local server. If no local server support, it would not give the right visualizaiton.
+
+The result.PNG is the screenshot of the visualizaiton
+
+The rubric part is written in Vis4 Design Info.docx
